@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="开启独立AMD显卡背景作为一个计算机相关专业的学生，在我的笔记本电脑已经使用近5年后才我才学会利用独立显卡来提升电脑性能 笔记本电脑可能有两个显卡，我的电脑是一颗Intel的核显，一颗是AMD的独显 接下来演示如何在玩游戏时开启笔记本电脑的AMD独立显卡 查看显卡信息方法一 Windows10打开任务管理器查看 点击切换下方的详细信息与简略信息，选择上方的性能选项卡，分别点击GPU 0和GPU 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No_0023_开启独立AMD显卡">
+<meta property="og:url" content="http://yoursite.com/2020/05/02/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="开启独立AMD显卡背景作为一个计算机相关专业的学生，在我的笔记本电脑已经使用近5年后才我才学会利用独立显卡来提升电脑性能 笔记本电脑可能有两个显卡，我的电脑是一颗Intel的核显，一颗是AMD的独显 接下来演示如何在玩游戏时开启笔记本电脑的AMD独立显卡 查看显卡信息方法一 Windows10打开任务管理器查看 点击切换下方的详细信息与简略信息，选择上方的性能选项卡，分别点击GPU 0和GPU 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/rw-1024x576.jpg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/GPUZ.gif?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/youjian-1024x576.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/output-1024x576.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E7%B3%BB%E7%BB%9F.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%98%BE%E5%8D%A1jpeg.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E6%B5%8F%E8%A7%88%E9%80%89%E9%A1%B9.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E9%80%89%E6%8B%A9%E7%A8%8B%E5%BA%8F.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/%E7%A8%8B%E5%BA%8F%E8%B7%AF%E5%BE%84.jpeg?raw=true">
+<meta property="og:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/%E9%80%89%E5%AE%9A%E7%A8%8B%E5%BA%8F.jpeg?raw=true">
+<meta property="article:published_time" content="2020-05-02T11:12:39.293Z">
+<meta property="article:modified_time" content="2020-05-02T11:08:23.757Z">
+<meta property="article:author" content="twobadao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/rw-1024x576.jpg?raw=true">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/02/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>No_0023_开启独立AMD显卡 | blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/02/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="twobadao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          No_0023_开启独立AMD显卡
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-02 19:12:39 / 修改时间：19:08:23" itemprop="dateCreated datePublished" datetime="2020-05-02T19:12:39+08:00">2020-05-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="开启独立AMD显卡"><a href="#开启独立AMD显卡" class="headerlink" title="开启独立AMD显卡"></a>开启独立AMD显卡</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>作为一个计算机相关专业的学生，在我的笔记本电脑已经使用近5年后才我才学会利用独立显卡来提升电脑性能</p>
+<p>笔记本电脑可能有两个显卡，我的电脑是一颗Intel的核显，一颗是AMD的独显</p>
+<p>接下来演示如何在玩游戏时开启笔记本电脑的AMD独立显卡</p>
+<h2 id="查看显卡信息"><a href="#查看显卡信息" class="headerlink" title="查看显卡信息"></a>查看显卡信息</h2><p>方法一</p>
+<p>Windows10打开任务管理器查看</p>
+<p>点击切换下方的详细信息与简略信息，选择上方的性能选项卡，分别点击GPU 0和GPU 1来查看显卡信息</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/rw-1024x576.jpg?raw=true" alt="任务管理器查看显卡信息"></p>
+<p>方法二：利用GPU-Z来查看GPU信息</p>
+<p>点击下方红框位置切换，显示不同显卡的信息</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/GPUZ.gif?raw=true" alt="GPU-Z查看显卡信息"></p>
+<h2 id="设置使用独立显卡的程序"><a href="#设置使用独立显卡的程序" class="headerlink" title="设置使用独立显卡的程序"></a>设置使用独立显卡的程序</h2><p>第一步：右键选择Radeon设置</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/youjian-1024x576.jpeg?raw=true" alt="右键radeon"></p>
+<p>如果右键没有Radeon设置，可以点击开始菜单，寻找AMD settings，或者你需要安装AMD的显卡驱动程序，<a href="https://www.youtube.com/watch?v=QBYCSwnSSCs" target="_blank" rel="noopener">点击跳转学安装AMD显卡驱动YouTube</a></p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/output-1024x576.jpeg?raw=true" alt="开始菜单AMDsetting"></p>
+<p>打开后选择系统</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E7%B3%BB%E7%BB%9F.jpeg?raw=true" alt="AMD系统"></p>
+<p>依次点击 可交换显卡 运行中的应用程序 已安装的配置好的应用程序</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%98%BE%E5%8D%A1jpeg.jpeg?raw=true" alt="AMD可交换显卡"></p>
+<p>点击浏览选项</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E6%B5%8F%E8%A7%88%E9%80%89%E9%A1%B9.jpeg?raw=true" alt="AMD浏览选项"></p>
+<p>在弹出的窗口中选择你要使用独立显卡运行的程序（这里以英雄联盟为例）</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/AMD%E9%80%89%E6%8B%A9%E7%A8%8B%E5%BA%8F.jpeg?raw=true" alt="AMD选择程序"></p>
+<p>程序位置可以通过右键属性查看</p>
+<p>英雄联盟的启动程序在”E:\Program Files\腾讯游戏\英雄联盟\TCLS\Client.exe”(不是桌面快捷方式的路径)</p>
+<p>炉石传说启动程序在”E:\exeinstall\Hearthstone\Hearthstone Beta Launcher.exe”（ 不是桌面快捷方式的路径 ）</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/%E7%A8%8B%E5%BA%8F%E8%B7%AF%E5%BE%84.jpeg?raw=true" alt="程序路径"></p>
+<p>按照启动程序的所在路径，在刚刚设置程序使用独立显卡的弹窗里选择好程序</p>
+<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0023_%E5%BC%80%E5%90%AF%E7%8B%AC%E7%AB%8BAMD%E6%98%BE%E5%8D%A1/%E9%80%89%E5%AE%9A%E7%A8%8B%E5%BA%8F.jpeg?raw=true" alt="选定程序"></p>
+<p>最后选择程序双击即可</p>
+<p>你所添加的这个程序就会使用AMD独立显卡运行</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/30/YouTube%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="YouTube快捷键">
+      <i class="fa fa-chevron-left"></i> YouTube快捷键
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/02/%E7%BE%8E%E8%82%A1%E7%86%94%E6%96%AD/" rel="next" title="美股熔断">
+      美股熔断 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开启独立AMD显卡"><span class="nav-number">1.</span> <span class="nav-text">开启独立AMD显卡</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看显卡信息"><span class="nav-number">1.2.</span> <span class="nav-text">查看显卡信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置使用独立显卡的程序"><span class="nav-number">1.3.</span> <span class="nav-text">设置使用独立显卡的程序</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">twobadao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">twobadao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
