@@ -175,6 +175,64 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/03/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="twobadao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="two_ba_dao's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/03/test/" class="post-title-link" itemprop="url">test</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-03 19:50:59 / 修改时间：19:51:09" itemprop="dateCreated datePublished" datetime="2020-05-03T19:50:59+08:00">2020-05-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/03/No_0024_%E6%8B%86%E5%BC%80%E9%BC%A0%E6%A0%87%E4%B8%80%E5%85%B1%E5%88%86%E5%87%A0%E6%AD%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -928,80 +986,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/02/No_0016_%E4%B8%8B%E8%BD%BDafreeca%E7%9B%B4%E6%92%AD%E7%9A%84python%E8%84%9A%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="twobadao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="two_ba_dao's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/02/No_0016_%E4%B8%8B%E8%BD%BDafreeca%E7%9B%B4%E6%92%AD%E7%9A%84python%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">No_0016_下载afreeca直播的python脚本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-02 19:13:07" itemprop="dateCreated datePublished" datetime="2020-05-02T19:13:07+08:00">2020-05-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-30 08:18:40" itemprop="dateModified" datetime="2020-04-30T08:18:40+08:00">2020-04-30</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="下载afreeca直播的python脚本"><a href="#下载afreeca直播的python脚本" class="headerlink" title="下载afreeca直播的python脚本"></a>下载afreeca直播的python脚本</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>afreecaTV是韩国的直播平台 它的直播流使用m3u8格式 利用ffmpeg下载直播流发现 里面的直播流xxx.ts文件只有四个是实时更新的</p>
-<p>于是利用循环请求xxx.m3u8的方式获取直播流xxx.ts视频文件的地址并利用youtube-dl将其下载 其中用了现学现卖的多线程</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用youtube-dl下载</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xiazai</span><span class="params">(dz)</span>:</span></span><br><span class="line">    os.system(command=<span class="string">'youtube-dl '</span> + dz)</span><br><span class="line"><span class="comment">#模拟浏览器头文件</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3683.103 Safari/537.36"</span>&#125;</span><br><span class="line"><span class="comment">#不停访问直播地址，获取m3u8文件并得到ts的地址</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">geturl</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#请求直播地址</span></span><br><span class="line">    kk=requests.get(<span class="string">'http://live-hls-local-cf.afreecatv.com/livestream-west-03/auth_playlist.m3u8?aid=.A32.7bbT56vyHM9fKZk.csJsI1RW2VeHNHmUaPUq_SjZ7KihDQOUHfdz0dNu6muEimIgZ8S1Hs16GZAo_m8eIbBp2NsxPQCbDns-Shp-6BJh0CC1JoP90BjiKUEeaJCekH6InFTu0R150RFiHhyv'</span>,headers=headers)</span><br><span class="line">    <span class="comment">#print(kk)</span></span><br><span class="line">    <span class="comment">#处理返回的页面代码</span></span><br><span class="line">    ooo = BeautifulSoup(kk.text, <span class="string">'lxml'</span>)</span><br><span class="line">    <span class="comment">#标签内的就是三个ts地址</span></span><br><span class="line">    p=ooo.select(<span class="string">"body &gt; p"</span>)[<span class="number">0</span>]</span><br><span class="line">    <span class="comment">#print(p)</span></span><br><span class="line">    <span class="comment">#进行地址切片，这里要注意直播流的序号一位数，两位数，三位数，四位数切片都不同，可以学习正则表达式改进</span></span><br><span class="line">    <span class="comment">#四位数切片【260：339】</span></span><br><span class="line">    f=p.string[<span class="number">260</span>:<span class="number">339</span>]</span><br><span class="line">    <span class="comment">#print(f)</span></span><br><span class="line">    <span class="comment">#拼接出真实的ts地址</span></span><br><span class="line">    down=<span class="string">"http://live-hls-local-cf.afreecatv.com/livestream-west-03/"</span>+f</span><br><span class="line">    print(down)</span><br><span class="line">    <span class="comment">#返回下载链接</span></span><br><span class="line">    <span class="keyword">return</span> down</span><br><span class="line"><span class="comment">#存放ts下载链接的</span></span><br><span class="line">a=[]</span><br><span class="line"><span class="comment">#不停地请求直播地址大概50可以请求到5个hls流文件</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">50000</span>):</span><br><span class="line">    <span class="comment">#获取直播ts地址</span></span><br><span class="line">    dizhi=geturl()</span><br><span class="line">    <span class="comment">#创建线程</span></span><br><span class="line">    threads = []</span><br><span class="line">    <span class="comment">#如果下载地址没在存放下载的列表里就利用线程调用youtube-dl下载</span></span><br><span class="line">    <span class="keyword">if</span> dizhi <span class="keyword">not</span> <span class="keyword">in</span> a:</span><br><span class="line">        t = threading.Thread(target=xiazai, args=(dizhi,))</span><br><span class="line">        t.start()</span><br><span class="line">        threads.append(t)</span><br><span class="line">        <span class="comment">#把已经调用youtube-dl下载的ts放到a列表里面</span></span><br><span class="line">        a.append(dizhi)</span><br><span class="line"><span class="comment">#释放线程</span></span><br><span class="line"><span class="keyword">for</span> t <span class="keyword">in</span> threads:</span><br><span class="line">    t.join()</span><br><span class="line"><span class="comment">#打印a下载列表</span></span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用这个脚本"><a href="#使用这个脚本" class="headerlink" title="使用这个脚本"></a>使用这个脚本</h2><p>你需要从网页获取到直播间的m3u8地址  并把它填写到请求直播地址的位置即可</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下载的都是直播实时画面 每个视频文件5秒左右 需要后期合并成一个文件</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1067,7 +1055,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
