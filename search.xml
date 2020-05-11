@@ -540,7 +540,7 @@
 <p>Title: Based on Arduino’s Dangerous Goods Storage Environment Monitoring System<br>Design and Implementation</p>
 <pre><code>教学单位 计算机科学与技术院   
 姓    名        **          
-学    号     201431109066     
+学    号     2014xxxx   
 年    级        2014 级       
 专    业     物联网工程       
 指导教师        **          
@@ -618,6 +618,8 @@
 <li>一台系统至少为<strong>安卓5.0</strong>的手机</li>
 <li>一个通过身份审核的直播平台主播账号</li>
 </ul>
+<a id="more"></a>
+
 <h2 id="手机端配置"><a href="#手机端配置" class="headerlink" title="手机端配置"></a>手机端配置</h2><ol>
 <li>在酷安app里搜索并下载termux</li>
 <li>安装termux</li>
