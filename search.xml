@@ -333,7 +333,8 @@
 <a id="more"></a>
 
 <h2 id="音频和视频同时2倍速"><a href="#音频和视频同时2倍速" class="headerlink" title="音频和视频同时2倍速"></a>音频和视频同时2倍速</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i test.mp4 -filter_complex <span class="string">"[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]"</span> -map <span class="string">"[v]"</span> -map <span class="string">"[a]"</span> <span class="built_in">test</span>-2.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
+
+<h2 id="添加硬字幕"><a href="#添加硬字幕" class="headerlink" title="添加硬字幕"></a>添加硬字幕</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf <span class="string">"subtitles=input.srt:force_style='FontName=Source Han Sans SC,Fontsize=27,PrimaryColour=&amp;H88FFFFFF&amp;'"</span> -c:a copy -preset fast -crf 22 output.mp4</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>No_0021_justmysocks使用感受</title>
