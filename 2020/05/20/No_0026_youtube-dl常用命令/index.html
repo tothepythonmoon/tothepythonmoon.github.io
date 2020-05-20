@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script data-ad-client="ca-pub-1272619431619788" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Pisces | Gemini":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="No_0026_youtube-dl常用命令youtube-dl简介 youtube-dl是一个能够下载各大视频网站视频的命令行程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No_0026_youtube-dl常用命令">
+<meta property="og:url" content="http://yoursite.com/2020/05/20/No_0026_youtube-dl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="two_ba_dao&#39;s blog">
+<meta property="og:description" content="No_0026_youtube-dl常用命令youtube-dl简介 youtube-dl是一个能够下载各大视频网站视频的命令行程序">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-20T09:08:28.633Z">
+<meta property="article:modified_time" content="2020-05-20T09:09:36.890Z">
+<meta property="article:author" content="twobadao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/20/No_0026_youtube-dl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>No_0026_youtube-dl常用命令 | two_ba_dao's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">two_ba_dao's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/20/No_0026_youtube-dl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="twobadao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="two_ba_dao's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          No_0026_youtube-dl常用命令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-20 17:08:28 / 修改时间：17:09:36" itemprop="dateCreated datePublished" datetime="2020-05-20T17:08:28+08:00">2020-05-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="No-0026-youtube-dl常用命令"><a href="#No-0026-youtube-dl常用命令" class="headerlink" title="No_0026_youtube-dl常用命令"></a>No_0026_youtube-dl常用命令</h1><h2 id="youtube-dl简介"><a href="#youtube-dl简介" class="headerlink" title="youtube-dl简介"></a>youtube-dl简介</h2><ul>
+<li>youtube-dl是一个能够下载各大视频网站视频的命令行程序<a id="more"></a></li>
+<li>基于python开发的</li>
+<li>支持Windows，Unix box，Mac OS X</li>
+<li>可以二次开发</li>
+</ul>
+<h2 id="youtube-dl支持的视频网站"><a href="#youtube-dl支持的视频网站" class="headerlink" title="youtube-dl支持的视频网站"></a>youtube-dl支持的视频网站</h2><p>支持的常见视频网站：哔哩哔哩，央视网，爱奇艺，酷我，乐视，芒果TV，网易云，QQ音乐，虾米音乐，优酷，YouTube等</p>
+<p><a href="https://ytdl-org.github.io/youtube-dl/supportedsites.html" target="_blank" rel="noopener">youtube-dl支持的网站完整版</a></p>
+<p>但是视频网站的升级等原因，可能会导致不能下载，但是主流的视频网站，开发者们也都在积极开发，大部分还是可以用的</p>
+<h2 id="youtube-dl常用命令"><a href="#youtube-dl常用命令" class="headerlink" title="youtube-dl常用命令"></a>youtube-dl常用命令</h2><h3 id="简易使用方式：youtube-dl-视频网址"><a href="#简易使用方式：youtube-dl-视频网址" class="headerlink" title="简易使用方式：youtube-dl+视频网址"></a>简易使用方式：youtube-dl+视频网址</h3><p>默认以最高画质下载该视频</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">youtube-dl video_url</span><br></pre></td></tr></table></figure>
+
+<h3 id="复杂使用方式：youtube-dl-参数1-参数2-参数3-……-参数n-视频网址"><a href="#复杂使用方式：youtube-dl-参数1-参数2-参数3-……-参数n-视频网址" class="headerlink" title="复杂使用方式：youtube-dl+参数1+参数2+参数3+……+参数n+视频网址"></a>复杂使用方式：youtube-dl+参数1+参数2+参数3+……+参数n+视频网址</h3><h4 id="例如：-g-这个参数是获取这个视频的真实下载地址"><a href="#例如：-g-这个参数是获取这个视频的真实下载地址" class="headerlink" title="例如：-g  这个参数是获取这个视频的真实下载地址"></a>例如：-g  这个参数是获取这个视频的真实下载地址</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">youtube-dl -g https://www.youtube.com/watch?v=XXXXXXXXXX</span><br></pre></td></tr></table></figure>
+<h4 id="F-这个参数是列举出这个视频的所有分辨率"><a href="#F-这个参数是列举出这个视频的所有分辨率" class="headerlink" title="-F 这个参数是列举出这个视频的所有分辨率"></a>-F 这个参数是列举出这个视频的所有分辨率</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">youtube-dl -F https://www.youtube.com/watch?v=XXXXXXXXXX</span><br></pre></td></tr></table></figure>
+
+<h4 id="h-这个参数是获取youtube-dl使用帮助"><a href="#h-这个参数是获取youtube-dl使用帮助" class="headerlink" title="-h 这个参数是获取youtube-dl使用帮助"></a>-h 这个参数是获取youtube-dl使用帮助</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">youtube-dl -h</span><br></pre></td></tr></table></figure>
+
+<h2 id="youtube-dl-h获取的帮助文档如下-详细描述了youtube-dl的使用参数和使用说明"><a href="#youtube-dl-h获取的帮助文档如下-详细描述了youtube-dl的使用参数和使用说明" class="headerlink" title="youtube-dl -h获取的帮助文档如下 详细描述了youtube-dl的使用参数和使用说明"></a>youtube-dl -h获取的帮助文档如下 详细描述了youtube-dl的使用参数和使用说明</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br></pre></td><td class="code"><pre><span class="line">Options:</span><br><span class="line">  General Options:</span><br><span class="line">    -h, --<span class="built_in">help</span>                       Print this <span class="built_in">help</span> text and <span class="built_in">exit</span></span><br><span class="line">    --version                        Print program version and <span class="built_in">exit</span></span><br><span class="line">    -U, --update                     Update this program to latest version. Make sure that you have sufficient</span><br><span class="line">                                     permissions (run with sudo <span class="keyword">if</span> needed)</span><br><span class="line">    -i, --ignore-errors              Continue on download errors, <span class="keyword">for</span> example to skip unavailable videos <span class="keyword">in</span> a</span><br><span class="line">                                     playlist</span><br><span class="line">    --abort-on-error                 Abort downloading of further videos (<span class="keyword">in</span> the playlist or the <span class="built_in">command</span> line)</span><br><span class="line">                                     <span class="keyword">if</span> an error occurs</span><br><span class="line">    --dump-user-agent                Display the current browser identification</span><br><span class="line">    --list-extractors                List all supported extractors</span><br><span class="line">    --extractor-descriptions         Output descriptions of all supported extractors</span><br><span class="line">    --force-generic-extractor        Force extraction to use the generic extractor</span><br><span class="line">    --default-search PREFIX          Use this prefix <span class="keyword">for</span> unqualified URLs. For example <span class="string">"gvsearch2:"</span> downloads</span><br><span class="line">                                     two videos from google videos <span class="keyword">for</span> youtube-dl <span class="string">"large apple"</span>. Use the value</span><br><span class="line">                                     <span class="string">"auto"</span> to <span class="built_in">let</span> youtube-dl guess (<span class="string">"auto_warning"</span> to emit a warning when</span><br><span class="line">                                     guessing). <span class="string">"error"</span> just throws an error. The default value <span class="string">"fixup_error"</span></span><br><span class="line">                                     repairs broken URLs, but emits an error <span class="keyword">if</span> this is not possible instead of</span><br><span class="line">                                     searching.</span><br><span class="line">    --ignore-config                  Do not <span class="built_in">read</span> configuration files. When given <span class="keyword">in</span> the global configuration</span><br><span class="line">                                     file /etc/youtube-dl.conf: Do not <span class="built_in">read</span> the user configuration <span class="keyword">in</span> ~/.config</span><br><span class="line">                                     /youtube-dl/config (%APPDATA%/youtube-dl/config.txt on Windows)</span><br><span class="line">    --config-location PATH           Location of the configuration file; either the path to the config or its</span><br><span class="line">                                     containing directory.</span><br><span class="line">    --flat-playlist                  Do not extract the videos of a playlist, only list them.</span><br><span class="line">    --mark-watched                   Mark videos watched (YouTube only)</span><br><span class="line">    --no-mark-watched                Do not mark videos watched (YouTube only)</span><br><span class="line">    --no-color                       Do not emit color codes <span class="keyword">in</span> output</span><br><span class="line"></span><br><span class="line">  Network Options:</span><br><span class="line">    --proxy URL                      Use the specified HTTP/HTTPS/SOCKS proxy. To <span class="built_in">enable</span> SOCKS proxy, specify a</span><br><span class="line">                                     proper scheme. For example socks5://127.0.0.1:1080/. Pass <span class="keyword">in</span> an empty</span><br><span class="line">                                     string (--proxy <span class="string">""</span>) <span class="keyword">for</span> direct connection</span><br><span class="line">    --socket-timeout SECONDS         Time to <span class="built_in">wait</span> before giving up, <span class="keyword">in</span> seconds</span><br><span class="line">    --<span class="built_in">source</span>-address IP              Client-side IP address to <span class="built_in">bind</span> to</span><br><span class="line">    -4, --force-ipv4                 Make all connections via IPv4</span><br><span class="line">    -6, --force-ipv6                 Make all connections via IPv6</span><br><span class="line"></span><br><span class="line">  Geo Restriction:</span><br><span class="line">    --geo-verification-proxy URL     Use this proxy to verify the IP address <span class="keyword">for</span> some geo-restricted sites. The</span><br><span class="line">                                     default proxy specified by --proxy (or none, <span class="keyword">if</span> the option is not present)</span><br><span class="line">                                     is used <span class="keyword">for</span> the actual downloading.</span><br><span class="line">    --geo-bypass                     Bypass geographic restriction via faking X-Forwarded-For HTTP header</span><br><span class="line">    --no-geo-bypass                  Do not bypass geographic restriction via faking X-Forwarded-For HTTP</span><br><span class="line">                                     header</span><br><span class="line">    --geo-bypass-country CODE        Force bypass geographic restriction with explicitly provided two-letter</span><br><span class="line">                                     ISO 3166-2 country code</span><br><span class="line">    --geo-bypass-ip-block IP_BLOCK   Force bypass geographic restriction with explicitly provided IP block <span class="keyword">in</span></span><br><span class="line">                                     CIDR notation</span><br><span class="line"></span><br><span class="line">  Video Selection:</span><br><span class="line">    --playlist-start NUMBER          Playlist video to start at (default is 1)</span><br><span class="line">    --playlist-end NUMBER            Playlist video to end at (default is last)</span><br><span class="line">    --playlist-items ITEM_SPEC       Playlist video items to download. Specify indices of the videos <span class="keyword">in</span> the</span><br><span class="line">                                     playlist separated by commas like: <span class="string">"--playlist-items 1,2,5,8"</span> <span class="keyword">if</span> you want</span><br><span class="line">                                     to download videos indexed 1, 2, 5, 8 <span class="keyword">in</span> the playlist. You can specify</span><br><span class="line">                                     range: <span class="string">"--playlist-items 1-3,7,10-13"</span>, it will download the videos at</span><br><span class="line">                                     index 1, 2, 3, 7, 10, 11, 12 and 13.</span><br><span class="line">    --match-title REGEX              Download only matching titles (regex or caseless sub-string)</span><br><span class="line">    --reject-title REGEX             Skip download <span class="keyword">for</span> matching titles (regex or caseless sub-string)</span><br><span class="line">    --max-downloads NUMBER           Abort after downloading NUMBER files</span><br><span class="line">    --min-filesize SIZE              Do not download any videos smaller than SIZE (e.g. 50k or 44.6m)</span><br><span class="line">    --max-filesize SIZE              Do not download any videos larger than SIZE (e.g. 50k or 44.6m)</span><br><span class="line">    --date DATE                      Download only videos uploaded <span class="keyword">in</span> this date</span><br><span class="line">    --datebefore DATE                Download only videos uploaded on or before this date (i.e. inclusive)</span><br><span class="line">    --dateafter DATE                 Download only videos uploaded on or after this date (i.e. inclusive)</span><br><span class="line">    --min-views COUNT                Do not download any videos with less than COUNT views</span><br><span class="line">    --max-views COUNT                Do not download any videos with more than COUNT views</span><br><span class="line">    --match-filter FILTER            Generic video filter. Specify any key (see the <span class="string">"OUTPUT TEMPLATE"</span> <span class="keyword">for</span> a</span><br><span class="line">                                     list of available keys) to match <span class="keyword">if</span> the key is present, !key to check <span class="keyword">if</span></span><br><span class="line">                                     the key is not present, key &gt; NUMBER (like <span class="string">"comment_count &gt; 12"</span>, also</span><br><span class="line">                                     works with &gt;=, &lt;, &lt;=, !=, =) to compare against a number, key = <span class="string">'LITERAL'</span></span><br><span class="line">                                     (like <span class="string">"uploader = 'Mike Smith'"</span>, also works with !=) to match against a</span><br><span class="line">                                     string literal and &amp; to require multiple matches. Values <span class="built_in">which</span> are not</span><br><span class="line">                                     known are excluded unless you put a question mark (?) after the operator.</span><br><span class="line">                                     For example, to only match videos that have been liked more than 100 <span class="built_in">times</span></span><br><span class="line">                                     and disliked less than 50 <span class="built_in">times</span> (or the dislike functionality is not</span><br><span class="line">                                     available at the given service), but who also have a description, use</span><br><span class="line">                                     --match-filter <span class="string">"like_count &gt; 100 &amp; dislike_count &lt;? 50 &amp; description"</span> .</span><br><span class="line">    --no-playlist                    Download only the video, <span class="keyword">if</span> the URL refers to a video and a playlist.</span><br><span class="line">    --yes-playlist                   Download the playlist, <span class="keyword">if</span> the URL refers to a video and a playlist.</span><br><span class="line">    --age-limit YEARS                Download only videos suitable <span class="keyword">for</span> the given age</span><br><span class="line">    --download-archive FILE          Download only videos not listed <span class="keyword">in</span> the archive file. Record the IDs of all</span><br><span class="line">                                     downloaded videos <span class="keyword">in</span> it.</span><br><span class="line">    --include-ads                    Download advertisements as well (experimental)</span><br><span class="line"></span><br><span class="line">  Download Options:</span><br><span class="line">    -r, --<span class="built_in">limit</span>-rate RATE            Maximum download rate <span class="keyword">in</span> bytes per second (e.g. 50K or 4.2M)</span><br><span class="line">    -R, --retries RETRIES            Number of retries (default is 10), or <span class="string">"infinite"</span>.</span><br><span class="line">    --fragment-retries RETRIES       Number of retries <span class="keyword">for</span> a fragment (default is 10), or <span class="string">"infinite"</span> (DASH,</span><br><span class="line">                                     hlsnative and ISM)</span><br><span class="line">    --skip-unavailable-fragments     Skip unavailable fragments (DASH, hlsnative and ISM)</span><br><span class="line">    --abort-on-unavailable-fragment  Abort downloading when some fragment is not available</span><br><span class="line">    --keep-fragments                 Keep downloaded fragments on disk after downloading is finished; fragments</span><br><span class="line">                                     are erased by default</span><br><span class="line">    --buffer-size SIZE               Size of download buffer (e.g. 1024 or 16K) (default is 1024)</span><br><span class="line">    --no-resize-buffer               Do not automatically adjust the buffer size. By default, the buffer size</span><br><span class="line">                                     is automatically resized from an initial value of SIZE.</span><br><span class="line">    --http-chunk-size SIZE           Size of a chunk <span class="keyword">for</span> chunk-based HTTP downloading (e.g. 10485760 or 10M)</span><br><span class="line">                                     (default is disabled). May be useful <span class="keyword">for</span> bypassing bandwidth throttling</span><br><span class="line">                                     imposed by a webserver (experimental)</span><br><span class="line">    --playlist-reverse               Download playlist videos <span class="keyword">in</span> reverse order</span><br><span class="line">    --playlist-random                Download playlist videos <span class="keyword">in</span> random order</span><br><span class="line">    --xattr-set-filesize             Set file xattribute ytdl.filesize with expected file size</span><br><span class="line">    --hls-prefer-native              Use the native HLS downloader instead of ffmpeg</span><br><span class="line">    --hls-prefer-ffmpeg              Use ffmpeg instead of the native HLS downloader</span><br><span class="line">    --hls-use-mpegts                 Use the mpegts container <span class="keyword">for</span> HLS videos, allowing to play the video <span class="keyword">while</span></span><br><span class="line">                                     downloading (some players may not be able to play it)</span><br><span class="line">    --external-downloader COMMAND    Use the specified external downloader. Currently supports</span><br><span class="line">                                     aria2c,avconv,axel,curl,ffmpeg,httpie,wget</span><br><span class="line">    --external-downloader-args ARGS  Give these arguments to the external downloader</span><br><span class="line"></span><br><span class="line">  Filesystem Options:</span><br><span class="line">    -a, --batch-file FILE            File containing URLs to download (<span class="string">'-'</span> <span class="keyword">for</span> stdin), one URL per line. Lines</span><br><span class="line">                                     starting with <span class="string">'#'</span>, <span class="string">';'</span> or <span class="string">']'</span> are considered as comments and ignored.</span><br><span class="line">    --id                             Use only video ID <span class="keyword">in</span> file name</span><br><span class="line">    -o, --output TEMPLATE            Output filename template, see the <span class="string">"OUTPUT TEMPLATE"</span> <span class="keyword">for</span> all the info</span><br><span class="line">    --autonumber-start NUMBER        Specify the start value <span class="keyword">for</span> %(autonumber)s (default is 1)</span><br><span class="line">    --restrict-filenames             Restrict filenames to only ASCII characters, and avoid <span class="string">"&amp;"</span> and spaces <span class="keyword">in</span></span><br><span class="line">                                     filenames</span><br><span class="line">    -w, --no-overwrites              Do not overwrite files</span><br><span class="line">    -c, --<span class="built_in">continue</span>                   Force resume of partially downloaded files. By default, youtube-dl will</span><br><span class="line">                                     resume downloads <span class="keyword">if</span> possible.</span><br><span class="line">    --no-continue                    Do not resume partially downloaded files (restart from beginning)</span><br><span class="line">    --no-part                        Do not use .part files - write directly into output file</span><br><span class="line">    --no-mtime                       Do not use the Last-modified header to <span class="built_in">set</span> the file modification time</span><br><span class="line">    --write-description              Write video description to a .description file</span><br><span class="line">    --write-info-json                Write video metadata to a .info.json file</span><br><span class="line">    --write-annotations              Write video annotations to a .annotations.xml file</span><br><span class="line">    --load-info-json FILE            JSON file containing the video information (created with the <span class="string">"--write-</span></span><br><span class="line"><span class="string">                                     info-json"</span> option)</span><br><span class="line">    --cookies FILE                   File to <span class="built_in">read</span> cookies from and dump cookie jar <span class="keyword">in</span></span><br><span class="line">    --cache-dir DIR                  Location <span class="keyword">in</span> the filesystem <span class="built_in">where</span> youtube-dl can store some downloaded</span><br><span class="line">                                     information permanently. By default <span class="variable">$XDG_CACHE_HOME</span>/youtube-dl or ~/.cache</span><br><span class="line">                                     /youtube-dl . At the moment, only YouTube player files (<span class="keyword">for</span> videos with</span><br><span class="line">                                     obfuscated signatures) are cached, but that may change.</span><br><span class="line">    --no-cache-dir                   Disable filesystem caching</span><br><span class="line">    --rm-cache-dir                   Delete all filesystem cache files</span><br><span class="line"></span><br><span class="line">  Thumbnail images:</span><br><span class="line">    --write-thumbnail                Write thumbnail image to disk</span><br><span class="line">    --write-all-thumbnails           Write all thumbnail image formats to disk</span><br><span class="line">    --list-thumbnails                Simulate and list all available thumbnail formats</span><br><span class="line"></span><br><span class="line">  Verbosity / Simulation Options:</span><br><span class="line">    -q, --quiet                      Activate quiet mode</span><br><span class="line">    --no-warnings                    Ignore warnings</span><br><span class="line">    -s, --simulate                   Do not download the video and <span class="keyword">do</span> not write anything to disk</span><br><span class="line">    --skip-download                  Do not download the video</span><br><span class="line">    -g, --get-url                    Simulate, quiet but <span class="built_in">print</span> URL</span><br><span class="line">    -e, --get-title                  Simulate, quiet but <span class="built_in">print</span> title</span><br><span class="line">    --get-id                         Simulate, quiet but <span class="built_in">print</span> id</span><br><span class="line">    --get-thumbnail                  Simulate, quiet but <span class="built_in">print</span> thumbnail URL</span><br><span class="line">    --get-description                Simulate, quiet but <span class="built_in">print</span> video description</span><br><span class="line">    --get-duration                   Simulate, quiet but <span class="built_in">print</span> video length</span><br><span class="line">    --get-filename                   Simulate, quiet but <span class="built_in">print</span> output filename</span><br><span class="line">    --get-format                     Simulate, quiet but <span class="built_in">print</span> output format</span><br><span class="line">    -j, --dump-json                  Simulate, quiet but <span class="built_in">print</span> JSON information. See the <span class="string">"OUTPUT TEMPLATE"</span> <span class="keyword">for</span></span><br><span class="line">                                     a description of available keys.</span><br><span class="line">    -J, --dump-single-json           Simulate, quiet but <span class="built_in">print</span> JSON information <span class="keyword">for</span> each <span class="built_in">command</span>-line argument.</span><br><span class="line">                                     If the URL refers to a playlist, dump the whole playlist information <span class="keyword">in</span> a</span><br><span class="line">                                     single line.</span><br><span class="line">    --<span class="built_in">print</span>-json                     Be quiet and <span class="built_in">print</span> the video information as JSON (video is still being</span><br><span class="line">                                     downloaded).</span><br><span class="line">    --newline                        Output progress bar as new lines</span><br><span class="line">    --no-progress                    Do not <span class="built_in">print</span> progress bar</span><br><span class="line">    --console-title                  Display progress <span class="keyword">in</span> console titlebar</span><br><span class="line">    -v, --verbose                    Print various debugging information</span><br><span class="line">    --dump-pages                     Print downloaded pages encoded using base64 to debug problems (very</span><br><span class="line">                                     verbose)</span><br><span class="line">    --write-pages                    Write downloaded intermediary pages to files <span class="keyword">in</span> the current directory to</span><br><span class="line">                                     debug problems</span><br><span class="line">    --<span class="built_in">print</span>-traffic                  Display sent and <span class="built_in">read</span> HTTP traffic</span><br><span class="line">    -C, --call-home                  Contact the youtube-dl server <span class="keyword">for</span> debugging</span><br><span class="line">    --no-call-home                   Do NOT contact the youtube-dl server <span class="keyword">for</span> debugging</span><br><span class="line"></span><br><span class="line">  Workarounds:</span><br><span class="line">    --encoding ENCODING              Force the specified encoding (experimental)</span><br><span class="line">    --no-check-certificate           Suppress HTTPS certificate validation</span><br><span class="line">    --prefer-insecure                Use an unencrypted connection to retrieve information about the video.</span><br><span class="line">                                     (Currently supported only <span class="keyword">for</span> YouTube)</span><br><span class="line">    --user-agent UA                  Specify a custom user agent</span><br><span class="line">    --referer URL                    Specify a custom referer, use <span class="keyword">if</span> the video access is restricted to one</span><br><span class="line">                                     domain</span><br><span class="line">    --add-header FIELD:VALUE         Specify a custom HTTP header and its value, separated by a colon <span class="string">':'</span>. You</span><br><span class="line">                                     can use this option multiple <span class="built_in">times</span></span><br><span class="line">    --bidi-workaround                Work around terminals that lack bidirectional text support. Requires bidiv</span><br><span class="line">                                     or fribidi executable <span class="keyword">in</span> PATH</span><br><span class="line">    --sleep-interval SECONDS         Number of seconds to sleep before each download when used alone or a lower</span><br><span class="line">                                     bound of a range <span class="keyword">for</span> randomized sleep before each download (minimum</span><br><span class="line">                                     possible number of seconds to sleep) when used along with --max-sleep-</span><br><span class="line">                                     interval.</span><br><span class="line">    --max-sleep-interval SECONDS     Upper bound of a range <span class="keyword">for</span> randomized sleep before each download (maximum</span><br><span class="line">                                     possible number of seconds to sleep). Must only be used along with --min-</span><br><span class="line">                                     sleep-interval.</span><br><span class="line"></span><br><span class="line">  Video Format Options:</span><br><span class="line">    -f, --format FORMAT              Video format code, see the <span class="string">"FORMAT SELECTION"</span> <span class="keyword">for</span> all the info</span><br><span class="line">    --all-formats                    Download all available video formats</span><br><span class="line">    --prefer-free-formats            Prefer free video formats unless a specific one is requested</span><br><span class="line">    -F, --list-formats               List all available formats of requested videos</span><br><span class="line">    --youtube-skip-dash-manifest     Do not download the DASH manifests and related data on YouTube videos</span><br><span class="line">    --merge-output-format FORMAT     If a merge is required (e.g. bestvideo+bestaudio), output to given</span><br><span class="line">                                     container format. One of mkv, mp4, ogg, webm, flv. Ignored <span class="keyword">if</span> no merge is</span><br><span class="line">                                     required</span><br><span class="line"></span><br><span class="line">  Subtitle Options:</span><br><span class="line">    --write-sub                      Write subtitle file</span><br><span class="line">    --write-auto-sub                 Write automatically generated subtitle file (YouTube only)</span><br><span class="line">    --all-subs                       Download all the available subtitles of the video</span><br><span class="line">    --list-subs                      List all available subtitles <span class="keyword">for</span> the video</span><br><span class="line">    --sub-format FORMAT              Subtitle format, accepts formats preference, <span class="keyword">for</span> example: <span class="string">"srt"</span> or</span><br><span class="line">                                     <span class="string">"ass/srt/best"</span></span><br><span class="line">    --sub-lang LANGS                 Languages of the subtitles to download (optional) separated by commas, use</span><br><span class="line">                                     --list-subs <span class="keyword">for</span> available language tags</span><br><span class="line"></span><br><span class="line">  Authentication Options:</span><br><span class="line">    -u, --username USERNAME          Login with this account ID</span><br><span class="line">    -p, --password PASSWORD          Account password. If this option is left out, youtube-dl will ask</span><br><span class="line">                                     interactively.</span><br><span class="line">    -2, --twofactor TWOFACTOR        Two-factor authentication code</span><br><span class="line">    -n, --netrc                      Use .netrc authentication data</span><br><span class="line">    --video-password PASSWORD        Video password (vimeo, smotri, youku)</span><br><span class="line"></span><br><span class="line">  Adobe Pass Options:</span><br><span class="line">    --ap-mso MSO                     Adobe Pass multiple-system operator (TV provider) identifier, use --ap-</span><br><span class="line">                                     list-mso <span class="keyword">for</span> a list of available MSOs</span><br><span class="line">    --ap-username USERNAME           Multiple-system operator account login</span><br><span class="line">    --ap-password PASSWORD           Multiple-system operator account password. If this option is left out,</span><br><span class="line">                                     youtube-dl will ask interactively.</span><br><span class="line">    --ap-list-mso                    List all supported multiple-system operators</span><br><span class="line"></span><br><span class="line">  Post-processing Options:</span><br><span class="line">    -x, --extract-audio              Convert video files to audio-only files (requires ffmpeg or avconv and</span><br><span class="line">                                     ffprobe or avprobe)</span><br><span class="line">    --audio-format FORMAT            Specify audio format: <span class="string">"best"</span>, <span class="string">"aac"</span>, <span class="string">"flac"</span>, <span class="string">"mp3"</span>, <span class="string">"m4a"</span>, <span class="string">"opus"</span>,</span><br><span class="line">                                     <span class="string">"vorbis"</span>, or <span class="string">"wav"</span>; <span class="string">"best"</span> by default; No effect without -x</span><br><span class="line">    --audio-quality QUALITY          Specify ffmpeg/avconv audio quality, insert a value between 0 (better) and</span><br><span class="line">                                     9 (worse) <span class="keyword">for</span> VBR or a specific bitrate like 128K (default 5)</span><br><span class="line">    --recode-video FORMAT            Encode the video to another format <span class="keyword">if</span> necessary (currently supported:</span><br><span class="line">                                     mp4|flv|ogg|webm|mkv|avi)</span><br><span class="line">    --postprocessor-args ARGS        Give these arguments to the postprocessor</span><br><span class="line">    -k, --keep-video                 Keep the video file on disk after the post-processing; the video is erased</span><br><span class="line">                                     by default</span><br><span class="line">    --no-post-overwrites             Do not overwrite post-processed files; the post-processed files are</span><br><span class="line">                                     overwritten by default</span><br><span class="line">    --embed-subs                     Embed subtitles <span class="keyword">in</span> the video (only <span class="keyword">for</span> mp4, webm and mkv videos)</span><br><span class="line">    --embed-thumbnail                Embed thumbnail <span class="keyword">in</span> the audio as cover art</span><br><span class="line">    --add-metadata                   Write metadata to the video file</span><br><span class="line">    --metadata-from-title FORMAT     Parse additional metadata like song title / artist from the video title.</span><br><span class="line">                                     The format syntax is the same as --output. Regular expression with named</span><br><span class="line">                                     capture groups may also be used. The parsed parameters replace existing</span><br><span class="line">                                     values. Example: --metadata-from-title <span class="string">"%(artist)s - %(title)s"</span> matches a</span><br><span class="line">                                     title like <span class="string">"Coldplay - Paradise"</span>. Example (regex): --metadata-from-title</span><br><span class="line">                                     <span class="string">"(?P&lt;artist&gt;.+?) - (?P&lt;title&gt;.+)"</span></span><br><span class="line">    --xattrs                         Write metadata to the video file<span class="string">'s xattrs (using dublin core and xdg</span></span><br><span class="line"><span class="string">                                     standards)</span></span><br><span class="line"><span class="string">    --fixup POLICY                   Automatically correct known faults of the file. One of never (do nothing),</span></span><br><span class="line"><span class="string">                                     warn (only emit a warning), detect_or_warn (the default; fix file if we</span></span><br><span class="line"><span class="string">                                     can, warn otherwise)</span></span><br><span class="line"><span class="string">    --prefer-avconv                  Prefer avconv over ffmpeg for running the postprocessors</span></span><br><span class="line"><span class="string">    --prefer-ffmpeg                  Prefer ffmpeg over avconv for running the postprocessors (default)</span></span><br><span class="line"><span class="string">    --ffmpeg-location PATH           Location of the ffmpeg/avconv binary; either the path to the binary or its</span></span><br><span class="line"><span class="string">                                     containing directory.</span></span><br><span class="line"><span class="string">    --exec CMD                       Execute a command on the file after downloading and post-processing,</span></span><br><span class="line"><span class="string">                                     similar to find'</span>s -<span class="built_in">exec</span> syntax. Example: --<span class="built_in">exec</span> <span class="string">'adb push &#123;&#125;</span></span><br><span class="line"><span class="string">                                     /sdcard/Music/ &amp;&amp; rm &#123;&#125;'</span></span><br><span class="line">    --convert-subs FORMAT            Convert the subtitles to other format (currently supported:</span><br><span class="line">                                     srt|ass|vtt|lrc)</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/15/No_0025_mpv%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="No_0025_mpv常用命令">
+      <i class="fa fa-chevron-left"></i> No_0025_mpv常用命令
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#No-0026-youtube-dl常用命令"><span class="nav-number">1.</span> <span class="nav-text">No_0026_youtube-dl常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#youtube-dl简介"><span class="nav-number">1.1.</span> <span class="nav-text">youtube-dl简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#youtube-dl支持的视频网站"><span class="nav-number">1.2.</span> <span class="nav-text">youtube-dl支持的视频网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#youtube-dl常用命令"><span class="nav-number">1.3.</span> <span class="nav-text">youtube-dl常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简易使用方式：youtube-dl-视频网址"><span class="nav-number">1.3.1.</span> <span class="nav-text">简易使用方式：youtube-dl+视频网址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂使用方式：youtube-dl-参数1-参数2-参数3-……-参数n-视频网址"><span class="nav-number">1.3.2.</span> <span class="nav-text">复杂使用方式：youtube-dl+参数1+参数2+参数3+……+参数n+视频网址</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#例如：-g-这个参数是获取这个视频的真实下载地址"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">例如：-g  这个参数是获取这个视频的真实下载地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-这个参数是列举出这个视频的所有分辨率"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">-F 这个参数是列举出这个视频的所有分辨率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#h-这个参数是获取youtube-dl使用帮助"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">-h 这个参数是获取youtube-dl使用帮助</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#youtube-dl-h获取的帮助文档如下-详细描述了youtube-dl的使用参数和使用说明"><span class="nav-number">1.4.</span> <span class="nav-text">youtube-dl -h获取的帮助文档如下 详细描述了youtube-dl的使用参数和使用说明</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">twobadao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">twobadao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
