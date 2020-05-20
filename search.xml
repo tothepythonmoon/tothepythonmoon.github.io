@@ -698,7 +698,7 @@
   <entry>
     <title>No_0025_mpv常用命令</title>
     <url>/2020/05/15/No_0025_mpv%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="No-0025-mpv常用命令"><a href="#No-0025-mpv常用命令" class="headerlink" title="No_0025_mpv常用命令"></a>No_0025_mpv常用命令</h1><h2 id="mpv调用ytdl并传递用户名和密码"><a href="#mpv调用ytdl并传递用户名和密码" class="headerlink" title="mpv调用ytdl并传递用户名和密码"></a>mpv调用ytdl并传递用户名和密码</h2><p><strong>实现的功能：直接用mpv播放网站上的视频，并且是需要登录才能看的视频</strong></p>
+    <content><![CDATA[<p><strong>实现的功能：直接用mpv播放网站上的视频，并且是需要登录才能看的视频</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mpv --ytdl-raw-options=username=your_username,password=your_password download_url</span><br></pre></td></tr></table></figure>
 
 ]]></content>
