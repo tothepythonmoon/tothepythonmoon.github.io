@@ -706,7 +706,8 @@
   <entry>
     <title>No_0026_youtube-dl常用命令</title>
     <url>/2020/05/20/No_0026_youtube-dl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="No-0026-youtube-dl常用命令"><a href="#No-0026-youtube-dl常用命令" class="headerlink" title="No_0026_youtube-dl常用命令"></a>No_0026_youtube-dl常用命令</h1><h2 id="youtube-dl简介"><a href="#youtube-dl简介" class="headerlink" title="youtube-dl简介"></a>youtube-dl简介</h2><ul>
+    <content><![CDATA[<h1 id="No-0026-youtube-dl常用命令"><a href="#No-0026-youtube-dl常用命令" class="headerlink" title="No_0026_youtube-dl常用命令"></a>No_0026_youtube-dl常用命令</h1><h2 id="youtube-dl简介"><a href="#youtube-dl简介" class="headerlink" title="youtube-dl简介"></a>youtube-dl简介</h2><p><a href="https://youtube-dl.org/" target="_blank" rel="noopener">youtube-dl官网</a></p>
+<ul>
 <li>youtube-dl是一个能够下载各大视频网站视频的命令行程序<a id="more"></a></li>
 <li>基于python开发的</li>
 <li>支持Windows，Unix box，Mac OS X</li>
@@ -716,6 +717,7 @@
 <h2 id="youtube-dl支持的视频网站"><a href="#youtube-dl支持的视频网站" class="headerlink" title="youtube-dl支持的视频网站"></a>youtube-dl支持的视频网站</h2><p>支持的常见视频网站：哔哩哔哩，央视网，爱奇艺，酷我，乐视，芒果TV，网易云，QQ音乐，虾米音乐，优酷，YouTube等</p>
 <p><a href="https://ytdl-org.github.io/youtube-dl/supportedsites.html" target="_blank" rel="noopener">youtube-dl支持的网站完整版</a></p>
 <p>但是视频网站的升级等原因，可能会导致不能下载，但是主流的视频网站，开发者们也都在积极开发，大部分还是可以用的</p>
+<h2 id="youtube-dl使用前的准备"><a href="#youtube-dl使用前的准备" class="headerlink" title="youtube-dl使用前的准备"></a>youtube-dl使用前的准备</h2><p>下载ffmpeg，下载youtube-dl，并将二者添加进环境变量<br><a href="http://ffmpeg.org/" target="_blank" rel="noopener">ffmpeg官网</a></p>
 <h2 id="youtube-dl常用命令"><a href="#youtube-dl常用命令" class="headerlink" title="youtube-dl常用命令"></a>youtube-dl常用命令</h2><h3 id="简易使用方式：youtube-dl-视频网址"><a href="#简易使用方式：youtube-dl-视频网址" class="headerlink" title="简易使用方式：youtube-dl+视频网址"></a>简易使用方式：youtube-dl+视频网址</h3><p>默认以最高画质下载该视频</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">youtube-dl video_url</span><br></pre></td></tr></table></figure>
 
