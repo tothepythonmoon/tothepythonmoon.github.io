@@ -712,6 +712,7 @@
 <li>支持Windows，Unix box，Mac OS X</li>
 <li>可以二次开发</li>
 </ul>
+<h2 id="youtube-dl程序发布页面"><a href="#youtube-dl程序发布页面" class="headerlink" title="youtube-dl程序发布页面"></a>youtube-dl程序发布页面</h2><p><a href="https://github.com/ytdl-org/youtube-dl/releases" target="_blank" rel="noopener">youtube-dl发布页传送门</a></p>
 <h2 id="youtube-dl支持的视频网站"><a href="#youtube-dl支持的视频网站" class="headerlink" title="youtube-dl支持的视频网站"></a>youtube-dl支持的视频网站</h2><p>支持的常见视频网站：哔哩哔哩，央视网，爱奇艺，酷我，乐视，芒果TV，网易云，QQ音乐，虾米音乐，优酷，YouTube等</p>
 <p><a href="https://ytdl-org.github.io/youtube-dl/supportedsites.html" target="_blank" rel="noopener">youtube-dl支持的网站完整版</a></p>
 <p>但是视频网站的升级等原因，可能会导致不能下载，但是主流的视频网站，开发者们也都在积极开发，大部分还是可以用的</p>
