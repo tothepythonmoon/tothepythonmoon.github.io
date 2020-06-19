@@ -336,7 +336,11 @@
 
 <h2 id="添加硬字幕"><a href="#添加硬字幕" class="headerlink" title="添加硬字幕"></a>添加硬字幕</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -vf <span class="string">"subtitles=input.srt:force_style='FontName=Source Han Sans SC,Fontsize=27,PrimaryColour=&amp;H88FFFFFF&amp;'"</span> -c:a copy -preset fast -crf 22 output.mp4</span><br></pre></td></tr></table></figure>
 
-<h2 id="ass-字幕风格"><a href="#ass-字幕风格" class="headerlink" title="ass 字幕风格"></a>ass 字幕风格</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Style: Default,Arial,20,&amp;H00FFFFFF,&amp;H000000FF,&amp;H80000000,&amp;H80000000,-1,0,0,0,100,100,0,0,4,0,0,2,10,10,10,1</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="ass-字幕风格"><a href="#ass-字幕风格" class="headerlink" title="ass 字幕风格"></a>ass 字幕风格</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Style: Default,Arial,20,&amp;H00FFFFFF,&amp;H000000FF,&amp;H80000000,&amp;H80000000,-1,0,0,0,100,100,0,0,4,0,0,2,10,10,10,1</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看视频音量"><a href="#查看视频音量" class="headerlink" title="查看视频音量"></a>查看视频音量</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>No_0021_justmysocks使用感受</title>
