@@ -275,7 +275,7 @@
 
 <h2 id="ass-字幕风格"><a href="#ass-字幕风格" class="headerlink" title="ass 字幕风格"></a>ass 字幕风格</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Style: Default,Arial,20,&amp;H00FFFFFF,&amp;H000000FF,&amp;H80000000,&amp;H80000000,-1,0,0,0,100,100,0,0,4,0,0,2,10,10,10,1</span><br></pre></td></tr></table></figure>
 
-<h2 id="查看视频音量"><a href="#查看视频音量" class="headerlink" title="查看视频音量"></a>查看视频音量</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.wav -filter:a volumedetect -f null /dev/null</span><br></pre></td></tr></table></figure>
+<h2 id="查看视频音量"><a href="#查看视频音量" class="headerlink" title="查看视频音量"></a>查看视频音量</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.wav -filter:a volumedetect -c:v copy -f null /dev/null</span><br></pre></td></tr></table></figure>
 
 ]]></content>
   </entry>
@@ -629,6 +629,11 @@
 <h2 id="下载指定日期内的照片"><a href="#下载指定日期内的照片" class="headerlink" title="下载指定日期内的照片"></a>下载指定日期内的照片</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">instaloader --post-filter=<span class="string">"date_utc &gt;= datetime (2020,6,1)"</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>No_0013_一个下载CNTV（央视网视频）特定节目的python程序</title>
+    <url>/2020/06/20/No_0013_%E4%B8%80%E4%B8%AA%E4%B8%8B%E8%BD%BDCNTV%EF%BC%88%E5%A4%AE%E8%A7%86%E7%BD%91%E8%A7%86%E9%A2%91%EF%BC%89%E7%89%B9%E5%AE%9A%E8%8A%82%E7%9B%AE%E7%9A%84python%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>tags</title>
