@@ -636,6 +636,14 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>No_0028_保持colab连接</title>
+    <url>/2020/06/24/No_0028_%E4%BF%9D%E6%8C%81colab%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<h1 id="使colab始终保持链接"><a href="#使colab始终保持链接" class="headerlink" title="使colab始终保持链接"></a>使colab始终保持链接</h1><p>将代码放入console回车即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">ClickConnect</span></span>()&#123;</span><br><span class="line">console.log(<span class="string">"Working"</span>); </span><br><span class="line">document.querySelector(<span class="string">"colab-toolbar-button#connect"</span>).click() </span><br><span class="line">&#125;</span><br><span class="line">setInterval(ClickConnect,60000)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
