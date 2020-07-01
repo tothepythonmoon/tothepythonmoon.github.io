@@ -277,6 +277,8 @@
 
 <h2 id="查看视频音量"><a href="#查看视频音量" class="headerlink" title="查看视频音量"></a>查看视频音量</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.wav -filter:a volumedetect -c:v copy -f null /dev/null</span><br></pre></td></tr></table></figure>
 
+<h2 id="剪裁视频"><a href="#剪裁视频" class="headerlink" title="剪裁视频"></a>剪裁视频</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i a.mov -strict -2 -vf crop=1080:1080:0:420 out.mp4</span><br></pre></td></tr></table></figure>
+
 ]]></content>
   </entry>
   <entry>
