@@ -279,6 +279,8 @@
 
 <h2 id="剪裁视频"><a href="#剪裁视频" class="headerlink" title="剪裁视频"></a>剪裁视频</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i a.mov -strict -2 -vf crop=1080:1080:0:420 out.mp4</span><br></pre></td></tr></table></figure>
 
+<h2 id="ffmpeg插帧"><a href="#ffmpeg插帧" class="headerlink" title="ffmpeg插帧"></a>ffmpeg插帧</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -filter:v <span class="string">"minterpolate=fps=60"</span> -c:a copy output.60fps.mp4</span><br></pre></td></tr></table></figure>
+
 ]]></content>
   </entry>
   <entry>
