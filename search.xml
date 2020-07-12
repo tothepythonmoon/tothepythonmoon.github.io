@@ -281,7 +281,7 @@
 
 <h2 id="ffmpeg插帧"><a href="#ffmpeg插帧" class="headerlink" title="ffmpeg插帧"></a>ffmpeg插帧</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -filter:v <span class="string">"minterpolate=fps=60"</span> -c:a copy output.60fps.mp4</span><br></pre></td></tr></table></figure>
 
-]]></content>
+<h2 id="ffmpeg旋转"><a href="#ffmpeg旋转" class="headerlink" title="ffmpeg旋转"></a>ffmpeg旋转</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -metadata:s:v rotate=<span class="string">"90"</span> -codec copy output.mp4</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>No_0021_justmysocks使用感受</title>
