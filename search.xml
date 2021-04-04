@@ -490,25 +490,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>美股熔断</title>
-    <url>/2020/05/02/%E7%BE%8E%E8%82%A1%E7%86%94%E6%96%AD/</url>
-    <content><![CDATA[<h1 id="美股熔断"><a href="#美股熔断" class="headerlink" title="美股熔断"></a>美股熔断</h1><h2 id="记录历史-发生在2020-03-09-黑色星期一"><a href="#记录历史-发生在2020-03-09-黑色星期一" class="headerlink" title="记录历史 发生在2020-03-09 黑色星期一"></a>记录历史 发生在2020-03-09 黑色星期一</h2><p>昨晚在youtube社区看到一个youtuber发的一个社区动态，当时并没有在意，直到今天下午看了几个youtuber的视频才了解到这件事的重大意义</p>
-<a id="more"></a>
-
-<p>以下是截图</p>
-<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0001/youtube%E7%A4%BE%E5%8C%BA%E6%88%AA%E5%9B%BE.png" alt=""></p>
-<p><img src="https://github.com/tothepythonmoon/2badaoblog/blob/master/blog/No_0001/%E7%BE%8E%E8%82%A1%E6%88%AA%E5%9B%BE.jpg" alt=""></p>
-<h2 id="造成美股熔断的原因"><a href="#造成美股熔断的原因" class="headerlink" title="造成美股熔断的原因"></a>造成美股熔断的原因</h2><p>1、新冠肺炎疫情影响</p>
-<p>2、全球油价大跌 30美金一桶油 甚至没有农夫山泉贵 一桶油不及一个油桶贵</p>
-<h2 id="美股熔断表现"><a href="#美股熔断表现" class="headerlink" title="美股熔断表现"></a>美股熔断表现</h2><p>跌得太狠触发第一层熔断机制 停止交易15分钟 </p>
-<h2 id="油价大跌原因"><a href="#油价大跌原因" class="headerlink" title="油价大跌原因"></a>油价大跌原因</h2><p>1、疫情导致停工停产 原油作为原材料的购买就少了 大家出门少 需要的汽油少</p>
-<p>2、沙特和俄罗斯出售大量低价油 </p>
-<h2 id="美股大跌原因"><a href="#美股大跌原因" class="headerlink" title="美股大跌原因"></a>美股大跌原因</h2><p>1、美国页岩气成本高 需要卖50美金一桶才赚钱 </p>
-<p>2、美国股市泡沫过大</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>接下来的全球经济 秩序都充满了不确定</p>
-]]></content>
-  </entry>
-  <entry>
     <title>No_0011_安卓手机搭建24h直播间</title>
     <url>/2020/05/11/No-0011-%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E6%90%AD%E5%BB%BA24h%E7%9B%B4%E6%92%AD%E9%97%B4/</url>
     <content><![CDATA[<h1 id="利用安卓手机搭建24h直播间"><a href="#利用安卓手机搭建24h直播间" class="headerlink" title="利用安卓手机搭建24h直播间"></a>利用安卓手机搭建24h直播间</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
@@ -637,11 +618,6 @@
 <h2 id="下载指定日期内的照片"><a href="#下载指定日期内的照片" class="headerlink" title="下载指定日期内的照片"></a>下载指定日期内的照片</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">instaloader --post-filter=<span class="string">"date_utc &gt;= datetime (2020,6,1)"</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>No_0013_一个下载CNTV（央视网视频）特定节目的python程序</title>
-    <url>/2020/06/20/No_0013_%E4%B8%80%E4%B8%AA%E4%B8%8B%E8%BD%BDCNTV%EF%BC%88%E5%A4%AE%E8%A7%86%E7%BD%91%E8%A7%86%E9%A2%91%EF%BC%89%E7%89%B9%E5%AE%9A%E8%8A%82%E7%9B%AE%E7%9A%84python%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>No_0028_保持colab连接</title>
